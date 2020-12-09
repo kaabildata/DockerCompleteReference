@@ -454,3 +454,17 @@ Also ensure that any configuration you set in /etc/docker/daemon.json doesn't co
 ```
 
 With older versions, you can change Docker's storage base directory (where container and images go) using the -goption when starting the Docker daemon. (check docker --help). You can have this setting applied automatically when Docker starts by adding it to /etc/default/docker
+
+
+### How to change the configuration of an already existing container
+
+You can change the configuration of an existing container by directly editing the hostconfig.json file at /var/lib/docker/containers/[hash_of_the_container]/hostconfig.json or /var/snap/docker/common/var-lib-docker/containers/[hash_of_the_container]/hostconfig.json, I believe, if You installed Docker as a snap.
+
+You can determine the [hash_of_the_container] via the docker inspect <container_name> command and the value of the "Id" field is the hash.
+
+Stop the container (docker stop <container_name>).
+Stop docker service (per Tacsiazuma's comment)
+Change the file.
+Restart your docker engine (to flush/clear config caches).
+Start the container (docker start <container_name>).
+So you don't need to create an image with this approach. You can also change the restart flag here.
