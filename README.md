@@ -419,7 +419,7 @@ systemctl enable /usr/lib/systemd/system/docker.service
 #### Option1
 You can refer to [IBM Documentation](https://www.ibm.com/support/knowledgecenter/SSBS6K_3.2.x/installing/docker_dir.html) to make this change at Linux level.
 
-![IBMChangeImageDirforDocker](ibmchangeimagedir.jpg)
+![IBMChangeImageDirforDocker](/images/ibmchangeimagedir.jpg)
 
 #### Option2
 
