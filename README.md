@@ -400,3 +400,17 @@ db.messages.find()
 ```
 
 ---
+# Important Commands
+
+### How to start Docker service automatically
+#### Option1
+You can refer to the [link](https://docs.docker.com/engine/install/linux-postinstall/#configure-docker-to-start-on-boot) from Docker Documentation and the same is available below.
+
+![DockerStartonBoot](/images/dockeronboot.jpg)
+
+#### Option2
+You can use this command to enable automatic start of the docker service after startup.
+
+```linuxcommand
+systemctl enable /usr/lib/systemd/system/docker.service
+```
