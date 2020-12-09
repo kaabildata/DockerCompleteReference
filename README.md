@@ -414,3 +414,24 @@ You can use this command to enable automatic start of the docker service after s
 ```linuxcommand
 systemctl enable /usr/lib/systemd/system/docker.service
 ```
+
+### How to change default image directory in Linux
+#### Option1
+You can refer to [IBM Documentation](https://www.ibm.com/support/knowledgecenter/SSBS6K_3.2.x/installing/docker_dir.html) to make this change at Linux level.
+
+![IBMChangeImageDirforDocker](ibmchangeimagedir.jpg)
+
+#### Option2
+
+With recent versions of Docker, you would set the value of the data-root parameter to your custom path, in /etc/docker/daemon.json according to [Docker Documentation](https://docs.docker.com/engine/reference/commandline/dockerd/#daemon-configuration-file).
+
+![DockerConfigFile](/images/dockerconfigfile.jpg)
+
+```text
+By default daemon.json does not exist, if you want to specify some configuration then go ahead and create the file. 
+The default config file path on Linux is /etc/docker/daemon.json like you said, but it doesn't exist by default. You can write one yourself and put additional docker daemon configuration stuff in there instead of passing in those configuration options into the command line. You don't even have to do dockerd --config-file /etc/docker/daemon.json since that's the default path, but it can be useful to make it explicit for others who are inspecting the system.
+
+Also ensure that any configuration you set in /etc/docker/daemon.json doesn't conflict with options passed into the command line evocation of dockerd.
+```
+
+With older versions, you can change Docker's storage base directory (where container and images go) using the -goption when starting the Docker daemon. (check docker --help). You can have this setting applied automatically when Docker starts by adding it to /etc/default/docker
