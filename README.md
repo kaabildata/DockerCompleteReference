@@ -70,6 +70,19 @@ That's it, you have a running Docker container.
 * List all containers: [`docker ps -a`](https://docs.docker.com/engine/reference/commandline/ps/)
 * List all container IDs: [`docker ps -q -a`](https://docs.docker.com/engine/reference/commandline/ps/)
 
+##### Issues with docker update for memory
+You may get into issues while executing "docker update --cpu-shares 512 -m 300M" like below.
+![Memorylimit](/images/memorylimit.jpg)
+
+""Error response from daemon: Cannot update container c3e36910c1c9a6cb1496ab16021eab08d61437dfaf31b97588f64838758b4f2a: Memory limit should be smaller than already set memoryswap limit, update the memoryswap at the same time""
+
+To solve this issue execute the command below,
+
+![updatememory](/images/updatememory.jpg)
+
+docker update --cpu-shares 512 -m 10M --memory-swap -1 <containername/id>
+
+
 #### CPU Constraints
 
 You can limit CPU, either using a percentage of all CPUs, or by using specific cores.  
