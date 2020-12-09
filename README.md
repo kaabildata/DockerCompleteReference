@@ -96,6 +96,12 @@ You can also set [memory constraints](https://docs.docker.com/engine/reference/r
 docker run -it -m 300M ubuntu:14.04 /bin/bash
 ```
 
+##### By default it is all ulimitied for both CPU and Memory
+It is usually ulimited resources allocated to each of the containers when it gets created unless otherwise configured. 
+You can refer to [official Docker Documentation](https://docs.docker.com/config/containers/resource_constraints/) for the same. 
+
+![CpuMemoryDefaults](/images/cpumemorydefaults.jpg)
+
 ## Starting and stopping containers
 
 * Start a container:
