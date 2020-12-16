@@ -235,7 +235,7 @@ The commands above will collect all container metrics, host metrics, Docker even
 * Show network details: [`docker network inspect`](https://docs.docker.com/engine/reference/commandline/network_inspect/)
 * Connect container to a network: [`docker network connect networkName containerName`](https://docs.docker.com/engine/reference/commandline/network_connect/)
 * Disconnect network from container: [`docker network disconnect networkName containerName`](https://docs.docker.com/engine/reference/commandline/network_disconnect/)
-* Create a network with custom subnet & gateway: [`docker network create --driver=bridge --subnet=192.168.2.0/24 --gateway=192.168.2.10 new_subnet}(https://docs.docker.com/engine/reference/commandline/network_create/#specify-advanced-options)
+* Create a network with custom subnet & gateway: [`docker network create --driver=bridge --subnet=192.168.2.0/24 --gateway=192.168.2.10 new_subnet`](https://docs.docker.com/engine/reference/commandline/network_create/#specify-advanced-options)
 
 ![DockerNetwork](/images/Dockernetwork.jpg)
 
